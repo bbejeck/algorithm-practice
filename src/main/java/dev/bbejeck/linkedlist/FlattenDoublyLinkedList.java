@@ -30,11 +30,10 @@ public class FlattenDoublyLinkedList {
                 current.child = null;
                 current.next = child;
                 child.prev = current;
-            } else {
-                if (previous != null) {
-                    previous.next = current;
-                    current.prev = previous;
-                }
+            }
+            if (previous != null) {
+                previous.next = current;
+                current.prev = previous;
             }
             previous = current;
         }

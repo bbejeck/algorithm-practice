@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * User: Bill Bejeck
  * Date: 3/4/25
  * Time: 8:44 PM
  */
-public class BinaryTreeLevelOrderTraversal {
-
-    public List<List<Integer>> levelOrder(TreeNode root) {
+public class BinaryTreeLevelOrderTraversalII {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> results = new ArrayList<>();
+        Stack<List<Integer>> stack = new Stack<>();
         if (root == null) {
             return results;
         }
@@ -33,7 +34,10 @@ public class BinaryTreeLevelOrderTraversal {
                     queue.offer(current.right);
                 }
             }
-            results.add(currentLevel);
+            stack.push(currentLevel);
+        }
+        while (!stack.isEmpty()) {
+            results.add(stack.pop());
         }
         return results;
     }

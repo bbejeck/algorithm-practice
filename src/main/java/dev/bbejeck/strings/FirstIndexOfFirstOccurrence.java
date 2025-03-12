@@ -12,7 +12,7 @@ public class FirstIndexOfFirstOccurrence {
             return -1;
         }
 
-        if (needle.length() == haystack.length() && needle.equals(haystack)) {
+        if (needle.equals(haystack)) {
             return 0;
         }
 

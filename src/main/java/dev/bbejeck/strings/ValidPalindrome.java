@@ -14,9 +14,8 @@ public class ValidPalindrome {
         char[] originalChars = s.toCharArray();
         char[] chars = new char[originalChars.length];
         int counter = 0;
-        for (int i = 0; i < originalChars.length; i++) {
-            char c = originalChars[i];
-            if (Character.isLetter(c) || Character.isDigit(c)){
+        for (char c : originalChars) {
+            if (Character.isLetter(c) || Character.isDigit(c)) {
                 chars[counter++] = Character.toLowerCase(c);
             }
         }

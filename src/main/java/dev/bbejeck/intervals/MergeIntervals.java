@@ -2,6 +2,7 @@ package dev.bbejeck.intervals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public class MergeIntervals {
         if (intervals.length <= 1) {
             return intervals;
         }
-        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
         List<int[]> merged = new ArrayList<>();
         int[] mi = intervals[0];
         for(int i = 1; i < intervals.length; i++) {

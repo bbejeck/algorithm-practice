@@ -30,6 +30,28 @@ public class TwoSumII {
         return result;
     }
 
+    /*
+     Arrays.sort(nums);
+       int start = 0;
+       int end = nums.length - 1;
+       int[] solution = new int[2];
+       while (start <= end) {
+         int temp = nums[start] + nums[end];
+         System.out.println("temp is " + temp + " start " + start + " end " + end);
+         if (temp == target) {
+            solution[0] = start;
+            solution[1] = end;
+            break;
+         } else if (temp < target) {
+             start+=1;
+             System.out.println("start is " + start);
+         } else {
+            end-=1;
+            System.out.println("end is " + end);
+         }
+       }
+     */
+
     public static void main(String[] args) {
         TwoSumII twoSumII = new TwoSumII();
         int[] result = twoSumII.twoSum(new int[]{2, 7, 11, 15}, 9);

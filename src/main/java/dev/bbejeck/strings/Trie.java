@@ -27,7 +27,8 @@ public class Trie {
     public void insert(String word) {
         Trie current = root;
         int index;
-        for (char c : word.toCharArray()) {
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
             if (Character.isWhitespace(c)) {
                 continue;
             }
@@ -47,7 +48,8 @@ public class Trie {
             return false;
         }
         Trie current = root;
-        for (char c : word.toCharArray()) {
+        for(int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
             if (Character.isWhitespace(c)) {
                 continue;
             }

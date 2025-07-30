@@ -14,6 +14,7 @@ public class CoinChange {
         }
         int[] options = new int[amount + 1];
         Arrays.fill(options, amount + 1);
+        options[0] = 0;
         for (int i = 1; i <= amount; i++) {
             for (int coin : coins) {
                 if (coin <= i) {

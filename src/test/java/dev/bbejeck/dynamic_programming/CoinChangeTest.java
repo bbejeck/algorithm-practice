@@ -81,8 +81,8 @@ public class CoinChangeTest {
                 Arguments.of(new int[]{1, 4, 5}, 8, 2),       // Optimal: 4+4=2 coins (not 5+1+1+1=4)
 
                 // Larger denominations
-                Arguments.of(new int[]{1, 5, 10, 25}, 30, 3), // 10+10+10 = 3 coins
-                Arguments.of(new int[]{1, 5, 10, 25}, 40, 4), // 25+5+5+5 = 4 coins
+                Arguments.of(new int[]{1, 5, 10, 25}, 30, 2), // 10+10+10 = 3 coins
+                Arguments.of(new int[]{1, 5, 10, 25}, 40, 3), // 25+5+5+5 = 4 coins
 
                 // Cases where we must use smaller coins
                 Arguments.of(new int[]{1, 3, 4}, 7, 2),       // 3+4=2 coins

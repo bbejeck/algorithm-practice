@@ -186,9 +186,9 @@ class NumberOfIslandsTest {
                 java.util.Arrays.deepToString(grid));
 
         // All land cells should now be water
-        for (int i = 0; i < grid.length; i++) {
+        for (char[] chars : grid) {
             for (int j = 0; j < grid[0].length; j++) {
-                assertEquals('0', grid[i][j]);
+                assertEquals('0', chars[j]);
             }
         }
     }
@@ -224,9 +224,9 @@ class NumberOfIslandsTest {
         assertEquals(1, solver.numIslands(grid));
 
         // After BFS, all connected '1's should be marked as '0'
-        for (int i = 0; i < grid.length; i++) {
+        for (char[] chars : grid) {
             for (int j = 0; j < grid[0].length; j++) {
-                assertEquals('0', grid[i][j]);
+                assertEquals('0', chars[j]);
             }
         }
     }

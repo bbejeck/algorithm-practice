@@ -34,7 +34,7 @@ public class ContainerWithMostWaterTest {
     @DisplayName("Should return correct area when heights include 0")
     void testWithZeroHeight() {
         int[] heights = {0, 5, 0, 8, 0};
-        assertEquals(8, container.maxArea(heights));
+        assertEquals(10, container.maxArea(heights));
     }
 
     @Test
@@ -76,14 +76,14 @@ public class ContainerWithMostWaterTest {
     @DisplayName("Should handle case when tallest walls are at the ends")
     void testTallestWallsAtEnds() {
         int[] heights = {8, 1, 2, 3, 4, 5, 6, 7, 9};
-        assertEquals(40, container.maxArea(heights));
+        assertEquals(64, container.maxArea(heights));
     }
 
     @Test
     @DisplayName("Should handle case when tallest walls are in the middle")
     void testTallestWallsInMiddle() {
         int[] heights = {1, 2, 9, 4, 5, 10, 3, 2, 1};
-        assertEquals(25, container.maxArea(heights));
+        assertEquals(27, container.maxArea(heights));
     }
 
     @Test

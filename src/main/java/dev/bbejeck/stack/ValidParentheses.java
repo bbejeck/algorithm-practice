@@ -15,8 +15,8 @@ public class ValidParentheses {
         if (s.length() == 1) {
             return false;
         }
-        Stack<Character> parens = new Stack();
-        Map<Character, Character> openClose = new HashMap();
+        Stack<Character> parens = new Stack<>();
+        Map<Character, Character> openClose = new HashMap<>();
 
         char op = '(';
         char cp = ')';

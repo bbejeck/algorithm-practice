@@ -34,7 +34,7 @@ class LRUCache {
             node.val = value;
             moveToFront(node);
         } else {
-            if (cache.size() >= capacity) {
+            if (cache.size() == capacity) {
                 removeTail();
             }
             Node<Integer, Integer> newNode = new Node<>(key, value);

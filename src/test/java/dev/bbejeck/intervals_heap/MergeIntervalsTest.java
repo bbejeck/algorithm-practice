@@ -1,4 +1,4 @@
-package dev.bbejeck.intervals;
+package dev.bbejeck.intervals_heap;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

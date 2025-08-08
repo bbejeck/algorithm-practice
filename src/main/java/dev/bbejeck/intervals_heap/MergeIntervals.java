@@ -1,4 +1,4 @@
-package dev.bbejeck.intervals;
+package dev.bbejeck.intervals_heap;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -9,13 +9,13 @@ public class ReverseLinkedList {
 
     public ListNode reverse(ListNode head) {
         ListNode current = head;
-        ListNode previous = null;
+        ListNode dummy = new ListNode();
         while (current != null) {
-            ListNode tempNext = current.next;
-            current.next = previous;
-            previous = current;
-            current = tempNext;
+            ListNode nextNode = current.next;
+            current.next = dummy.next;
+            dummy.next = current;
+            current = nextNode;
         }
-        return previous;
+        return dummy.next;
     }
 }

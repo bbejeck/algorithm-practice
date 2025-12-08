@@ -11,7 +11,7 @@ import java.util.Set;
  * Date: 1/18/25
  * Time: 3:12 PM
  */
-public class Soduku {
+public class    Soduku {
 
     public int[][] solveSudoku(int[][] board) {
         backtrack(board, 0, 0);

@@ -13,11 +13,11 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  */
 class ReconstructTreeFromPreorderInorderArraysTest {
 
-    private ReconstructTreeFromPreorderInorderArrays reconstructor;
+    private ReconstructTreeFromPreorderInorderArrays treeBuilder;
 
     @BeforeEach
     void setUp() {
-        reconstructor = new ReconstructTreeFromPreorderInorderArrays();
+        treeBuilder = new ReconstructTreeFromPreorderInorderArrays();
     }
 
 
@@ -27,7 +27,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {};
         int[] inorder = {};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNull(result);
     }
@@ -38,7 +38,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {1};
         int[] inorder = {1};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(1, result.val);
@@ -54,7 +54,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         // 1
         int[] preorder = {2, 1};
         int[] inorder = {1, 2};
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(2, result.val);
@@ -72,7 +72,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {1, 2};
         int[] inorder = {1, 2};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(1, result.val);
@@ -90,7 +90,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {2, 1, 3};
         int[] inorder = {1, 2, 3};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(2, result.val);
@@ -111,7 +111,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {3, 9, 20, 15, 7};
         int[] inorder = {9, 3, 15, 20, 7};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(3, result.val);
@@ -144,7 +144,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {4, 3, 2, 1};
         int[] inorder = {1, 2, 3, 4};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(4, result.val);
@@ -172,7 +172,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {1, 2, 3, 4};
         int[] inorder = {1, 2, 3, 4};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(1, result.val);
@@ -198,7 +198,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {1, 2, 4, 5, 3, 6, 7};
         int[] inorder = {4, 2, 5, 1, 6, 3, 7};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(1, result.val);
@@ -225,7 +225,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {1, 2, 4, 3, 5};
         int[] inorder = {4, 2, 1, 3, 5};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(1, result.val);
@@ -248,7 +248,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {-1, -2, -3};
         int[] inorder = {-2, -1, -3};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(-1, result.val);
@@ -265,7 +265,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {0, 1, 2};
         int[] inorder = {1, 0, 2};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(0, result.val);
@@ -286,7 +286,7 @@ class ReconstructTreeFromPreorderInorderArraysTest {
         int[] preorder = {5, 3, 2, 1, 4, 8, 7, 6, 9};
         int[] inorder = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        TreeNode result = reconstructor.constructBinaryTree(preorder, inorder);
+        TreeNode result = treeBuilder.constructBinaryTree(preorder, inorder);
 
         assertNotNull(result);
         assertEquals(5, result.val);

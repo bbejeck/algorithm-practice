@@ -15,8 +15,6 @@ public class InsertBst {
             root.left = insert(root.left, val);
         } else if (val > root.val) {
             root.right = insert(root.right, val);
-        } else {
-            return root;
         }
         return root;
     }

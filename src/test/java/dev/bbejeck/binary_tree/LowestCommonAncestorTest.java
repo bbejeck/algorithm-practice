@@ -29,15 +29,15 @@ public class LowestCommonAncestorTest {
     @Test
     void testClassicExample_5And1() {
         // Build the tree
-        TreeNode<Integer> root = new TreeNode<Integer>(3);
-        TreeNode<Integer> node5 = new TreeNode<Integer>(5);
-        TreeNode<Integer> node1 = new TreeNode<Integer>(1);
-        TreeNode<Integer> node6 = new TreeNode<Integer>(6);
-        TreeNode<Integer> node2 = new TreeNode<Integer>(2);
-        TreeNode<Integer> node0 = new TreeNode<Integer>(0);
-        TreeNode<Integer> node8 = new TreeNode<Integer>(8);
-        TreeNode<Integer> node7 = new TreeNode<Integer>(7);
-        TreeNode<Integer> node4 = new TreeNode<Integer>(4);
+        TreeNode<Integer> root = new TreeNode<>(3);
+        TreeNode<Integer> node5 = new TreeNode<>(5);
+        TreeNode<Integer> node1 = new TreeNode<>(1);
+        TreeNode<Integer> node6 = new TreeNode<>(6);
+        TreeNode<Integer> node2 = new TreeNode<>(2);
+        TreeNode<Integer> node0 = new TreeNode<>(0);
+        TreeNode<Integer> node8 = new TreeNode<>(8);
+        TreeNode<Integer> node7 = new TreeNode<>(7);
+        TreeNode<Integer> node4 = new TreeNode<>(4);
 
         root.left = node5;
         root.right = node1;
@@ -56,15 +56,15 @@ public class LowestCommonAncestorTest {
     @Test
     void testClassicExample_5And4() {
         // Build the same tree
-        TreeNode<Integer> root = new TreeNode<Integer>(3);
-        TreeNode<Integer> node5 = new TreeNode<Integer>(5);
-        TreeNode<Integer> node1 = new TreeNode<Integer>(1);
-        TreeNode<Integer> node6 = new TreeNode<Integer>(6);
-        TreeNode<Integer> node2 = new TreeNode<Integer>(2);
-        TreeNode<Integer> node0 = new TreeNode<Integer>(0);
-        TreeNode<Integer> node8 = new TreeNode<Integer>(8);
-        TreeNode<Integer> node7 = new TreeNode<Integer>(7);
-        TreeNode<Integer> node4 = new TreeNode<Integer>(4);
+        TreeNode<Integer> root = new TreeNode<>(3);
+        TreeNode<Integer> node5 = new TreeNode<>(5);
+        TreeNode<Integer> node1 = new TreeNode<>(1);
+        TreeNode<Integer> node6 = new TreeNode<>(6);
+        TreeNode<Integer> node2 = new TreeNode<>(2);
+        TreeNode<Integer> node0 = new TreeNode<>(0);
+        TreeNode<Integer> node8 = new TreeNode<>(8);
+        TreeNode<Integer> node7 = new TreeNode<>(7);
+        TreeNode<Integer> node4 = new TreeNode<>(4);
 
         root.left = node5;
         root.right = node1;
@@ -83,15 +83,15 @@ public class LowestCommonAncestorTest {
     @Test
     void testClassicExample_6And4() {
         // Build the same tree
-        TreeNode<Integer> root = new TreeNode<Integer>(3);
-        TreeNode<Integer> node5 = new TreeNode<Integer>(5);
-        TreeNode<Integer> node1 = new TreeNode<Integer>(1);
-        TreeNode<Integer> node6 = new TreeNode<Integer>(6);
-        TreeNode<Integer> node2 = new TreeNode<Integer>(2);
-        TreeNode<Integer> node0 = new TreeNode<Integer>(0);
-        TreeNode<Integer> node8 = new TreeNode<Integer>(8);
-        TreeNode<Integer> node7 = new TreeNode<Integer>(7);
-        TreeNode<Integer> node4 = new TreeNode<Integer>(4);
+        TreeNode<Integer> root = new TreeNode<>(3);
+        TreeNode<Integer> node5 = new TreeNode<>(5);
+        TreeNode<Integer> node1 = new TreeNode<>(1);
+        TreeNode<Integer> node6 = new TreeNode<>(6);
+        TreeNode<Integer> node2 = new TreeNode<>(2);
+        TreeNode<Integer> node0 = new TreeNode<>(0);
+        TreeNode<Integer> node8 = new TreeNode<>(8);
+        TreeNode<Integer> node7 = new TreeNode<>(7);
+        TreeNode<Integer> node4 = new TreeNode<>(4);
 
         root.left = node5;
         root.right = node1;
@@ -109,7 +109,7 @@ public class LowestCommonAncestorTest {
 
     @Test
     void testSingleNodeTree() {
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
+        TreeNode<Integer> root = new TreeNode<>(1);
 
         // Both nodes are the same (root)
         TreeNode<Integer> result = lca.lowestCommonAncestor(root, root, root);
@@ -118,8 +118,8 @@ public class LowestCommonAncestorTest {
 
     @Test
     void testTwoNodeTree() {
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
-        TreeNode<Integer> left = new TreeNode<Integer>(2);
+        TreeNode<Integer> root = new TreeNode<>(1);
+        TreeNode<Integer> left = new TreeNode<>(2);
         root.left = left;
 
         // LCA of root and its child should be root
@@ -134,10 +134,10 @@ public class LowestCommonAncestorTest {
     @Test
     void testLinearTree() {
         // Create a linear tree: 1 -> 2 -> 3 -> 4
-        TreeNode<Integer> node1 = new TreeNode<Integer>(1);
-        TreeNode<Integer> node2 = new TreeNode<Integer>(2);
-        TreeNode<Integer> node3 = new TreeNode<Integer>(3);
-        TreeNode<Integer> node4 = new TreeNode<Integer>(4);
+        TreeNode<Integer> node1 = new TreeNode<>(1);
+        TreeNode<Integer> node2 = new TreeNode<>(2);
+        TreeNode<Integer> node3 = new TreeNode<>(3);
+        TreeNode<Integer> node4 = new TreeNode<>(4);
 
         node1.left = node2;
         node2.left = node3;
@@ -158,9 +158,9 @@ public class LowestCommonAncestorTest {
 
     @Test
     void testSameNode() {
-        TreeNode<Integer> root = new TreeNode<Integer>(3);
-        TreeNode<Integer> left = new TreeNode<Integer>(5);
-        TreeNode<Integer> right = new TreeNode<Integer>(1);
+        TreeNode<Integer> root = new TreeNode<>(3);
+        TreeNode<Integer> left = new TreeNode<>(5);
+        TreeNode<Integer> right = new TreeNode<>(1);
         root.left = left;
         root.right = right;
 
@@ -180,14 +180,14 @@ public class LowestCommonAncestorTest {
         //  /     \
         // 7       8
 
-        TreeNode<Integer> node1 = new TreeNode<Integer>(1);
-        TreeNode<Integer> node2 = new TreeNode<Integer>(2);
-        TreeNode<Integer> node3 = new TreeNode<Integer>(3);
-        TreeNode<Integer> node4 = new TreeNode<Integer>(4);
-        TreeNode<Integer> node5 = new TreeNode<Integer>(5);
-        TreeNode<Integer> node6 = new TreeNode<Integer>(6);
-        TreeNode<Integer> node7 = new TreeNode<Integer>(7);
-        TreeNode<Integer> node8 = new TreeNode<Integer>(8);
+        TreeNode<Integer> node1 = new TreeNode<>(1);
+        TreeNode<Integer> node2 = new TreeNode<>(2);
+        TreeNode<Integer> node3 = new TreeNode<>(3);
+        TreeNode<Integer> node4 = new TreeNode<>(4);
+        TreeNode<Integer> node5 = new TreeNode<>(5);
+        TreeNode<Integer> node6 = new TreeNode<>(6);
+        TreeNode<Integer> node7 = new TreeNode<>(7);
+        TreeNode<Integer> node8 = new TreeNode<>(8);
 
         node1.left = node2;
         node1.right = node3;

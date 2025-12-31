@@ -28,6 +28,6 @@ public class ReconstructBinarySearchTreeFromPreorder {
             index[0]++;
             TreeNode<Integer> left = buildTreeHelper(preorder, min, val, index);
             TreeNode<Integer> right = buildTreeHelper(preorder, val, max, index);
-            return new TreeNode<Integer>(val, left, right);
+            return new TreeNode<>(val, left, right);
         }
 }

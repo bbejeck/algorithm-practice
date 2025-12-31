@@ -40,6 +40,6 @@ public class ReconstructTreeFromPreorderInorderArrays {
                         rootIndx + 1,
                               size - 1 - leftSize);
 
-        return new TreeNode<Integer>(rootVal, left, right);
+        return new TreeNode<>(rootVal, left, right);
     }
 }

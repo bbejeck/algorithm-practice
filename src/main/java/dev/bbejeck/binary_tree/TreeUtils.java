@@ -21,7 +21,7 @@ public class TreeUtils {
             return null;
         }
 
-        TreeNode<Integer> node = new TreeNode<Integer>(values.get(index[0]++));
+        TreeNode<Integer> node = new TreeNode<>(values.get(index[0]++));
         node.left = buildTree(values, index);
         node.right = buildTree(values, index);
 

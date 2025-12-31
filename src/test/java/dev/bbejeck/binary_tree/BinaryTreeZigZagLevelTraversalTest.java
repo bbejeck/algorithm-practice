@@ -23,11 +23,11 @@ class BinaryTreeZigZagLevelTraversalTest {
         //    9  20
         //       / \
         //      15  7
-        TreeNode<Integer> root = new TreeNode<Integer>(3);
-        root.left = new TreeNode<Integer>(9);
-        root.right = new TreeNode<Integer>(20);
-        root.right.left = new TreeNode<Integer>(15);
-        root.right.right = new TreeNode<Integer>(7);
+        TreeNode<Integer> root = new TreeNode<>(3);
+        root.left = new TreeNode<>(9);
+        root.right = new TreeNode<>(20);
+        root.right.left = new TreeNode<>(15);
+        root.right.right = new TreeNode<>(7);
 
         List<List<Integer>> result = traversal.zigzagLevelOrder(root);
 
@@ -45,7 +45,7 @@ class BinaryTreeZigZagLevelTraversalTest {
 
     @Test
     void testSingleNodeTree() {
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
+        TreeNode<Integer> root = new TreeNode<>(1);
         List<List<Integer>> result = traversal.zigzagLevelOrder(root);
 
         assertEquals(1, result.size(), "Should have one level");
@@ -60,13 +60,13 @@ class BinaryTreeZigZagLevelTraversalTest {
         //     2   3
         //    / \ / \
         //   4  5 6  7
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
-        root.left = new TreeNode<Integer>(2);
-        root.right = new TreeNode<Integer>(3);
-        root.left.left = new TreeNode<Integer>(4);
-        root.left.right = new TreeNode<Integer>(5);
-        root.right.left = new TreeNode<Integer>(6);
-        root.right.right = new TreeNode<Integer>(7);
+        TreeNode<Integer> root = new TreeNode<>(1);
+        root.left = new TreeNode<>(2);
+        root.right = new TreeNode<>(3);
+        root.left.left = new TreeNode<>(4);
+        root.left.right = new TreeNode<>(5);
+        root.right.left = new TreeNode<>(6);
+        root.right.right = new TreeNode<>(7);
 
         List<List<Integer>> result = traversal.zigzagLevelOrder(root);
 

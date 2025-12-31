@@ -27,7 +27,7 @@ class InvertBinaryTreeTest {
     @Test
     @DisplayName("Should return same node for single node tree")
     void testSingleNode() {
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
+        TreeNode<Integer> root = new TreeNode<>(1);
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
 
         assertNotNull(result);
@@ -42,9 +42,9 @@ class InvertBinaryTreeTest {
         //     1           1
         //    / \   =>    / \
         //   2   3       3   2
-        TreeNode<Integer> root = new TreeNode<Integer>(1,
-                new TreeNode<Integer>(2),
-                new TreeNode<Integer>(3));
+        TreeNode<Integer> root = new TreeNode<>(1,
+                new TreeNode<>(2),
+                new TreeNode<>(3));
 
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
 
@@ -61,13 +61,13 @@ class InvertBinaryTreeTest {
         //     2   7    =>     7   2
         //    / \ / \         / \ / \
         //   1  3 6  9       9  6 3  1
-        TreeNode<Integer> root = new TreeNode<Integer>(4,
-                new TreeNode<Integer>(2,
-                        new TreeNode<Integer>(1),
-                        new TreeNode<Integer>(3)),
-                new TreeNode<Integer>(7,
-                        new TreeNode<Integer>(6),
-                        new TreeNode<Integer>(9)));
+        TreeNode<Integer> root = new TreeNode<>(4,
+                new TreeNode<>(2,
+                        new TreeNode<>(1),
+                        new TreeNode<>(3)),
+                new TreeNode<>(7,
+                        new TreeNode<>(6),
+                        new TreeNode<>(9)));
 
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
 
@@ -88,10 +88,10 @@ class InvertBinaryTreeTest {
         // 2       =>      2
         //  \             /
         //   3           3
-        TreeNode<Integer> root = new TreeNode<Integer>(1,
-                new TreeNode<Integer>(2,
+        TreeNode<Integer> root = new TreeNode<>(1,
+                new TreeNode<>(2,
                         null,
-                        new TreeNode<Integer>(3)),
+                        new TreeNode<>(3)),
                 null);
 
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
@@ -112,11 +112,11 @@ class InvertBinaryTreeTest {
         //     2  =>   2
         //      \       \
         //       3       3
-        TreeNode<Integer> root = new TreeNode<Integer>(1,
+        TreeNode<Integer> root = new TreeNode<>(1,
                 null,
-                new TreeNode<Integer>(2,
+                new TreeNode<>(2,
                         null,
-                        new TreeNode<Integer>(3)));
+                        new TreeNode<>(3)));
 
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
 
@@ -136,13 +136,13 @@ class InvertBinaryTreeTest {
         //   2   3    =>     3   2
         //  /     \         /     \
         // 4       5       5       4
-        TreeNode<Integer> root = new TreeNode<Integer>(1,
-                new TreeNode<Integer>(2,
-                        new TreeNode<Integer>(4),
+        TreeNode<Integer> root = new TreeNode<>(1,
+                new TreeNode<>(2,
+                        new TreeNode<>(4),
                         null),
-                new TreeNode<Integer>(3,
+                new TreeNode<>(3,
                         null,
-                        new TreeNode<Integer>(5)));
+                        new TreeNode<>(5)));
 
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
 
@@ -158,13 +158,13 @@ class InvertBinaryTreeTest {
     @Test
     @DisplayName("Should invert and then invert again to get original tree")
     void testDoubleInversion() {
-        TreeNode<Integer> root = new TreeNode<Integer>(1,
-                new TreeNode<Integer>(2,
-                        new TreeNode<Integer>(4),
-                        new TreeNode<Integer>(5)),
-                new TreeNode<Integer>(3,
-                        new TreeNode<Integer>(6),
-                        new TreeNode<Integer>(7)));
+        TreeNode<Integer> root = new TreeNode<>(1,
+                new TreeNode<>(2,
+                        new TreeNode<>(4),
+                        new TreeNode<>(5)),
+                new TreeNode<>(3,
+                        new TreeNode<>(6),
+                        new TreeNode<>(7)));
 
         TreeNode<Integer> inverted = invertBinaryTree.invertTree(root);
         TreeNode<Integer> doubleInverted = invertBinaryTree.invertTree(inverted);
@@ -182,9 +182,9 @@ class InvertBinaryTreeTest {
     @Test
     @DisplayName("Should return the same root node reference")
     void testReturnsSameRootReference() {
-        TreeNode<Integer> root = new TreeNode<Integer>(1,
-                new TreeNode<Integer>(2),
-                new TreeNode<Integer>(3));
+        TreeNode<Integer> root = new TreeNode<>(1,
+                new TreeNode<>(2),
+                new TreeNode<>(3));
 
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
 
@@ -194,9 +194,9 @@ class InvertBinaryTreeTest {
     @Test
     @DisplayName("Should handle tree with negative values")
     void testNegativeValues() {
-        TreeNode<Integer> root = new TreeNode<Integer>(-1,
-                new TreeNode<Integer>(-2),
-                new TreeNode<Integer>(-3));
+        TreeNode<Integer> root = new TreeNode<>(-1,
+                new TreeNode<>(-2),
+                new TreeNode<>(-3));
 
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
 
@@ -208,9 +208,9 @@ class InvertBinaryTreeTest {
     @Test
     @DisplayName("Should handle tree with zero value")
     void testZeroValue() {
-        TreeNode<Integer> root = new TreeNode<Integer>(0,
-                new TreeNode<Integer>(1),
-                new TreeNode<Integer>(2));
+        TreeNode<Integer> root = new TreeNode<>(0,
+                new TreeNode<>(1),
+                new TreeNode<>(2));
 
         TreeNode<Integer> result = invertBinaryTree.invertTree(root);
 

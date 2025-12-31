@@ -31,7 +31,7 @@ public class InsertBstTest {
     @Test
     public void testInsertLeftChild() {
         // Insert a smaller value, should go to the left
-        TreeNode<Integer> root = new TreeNode<Integer>(10);
+        TreeNode<Integer> root = new TreeNode<>(10);
         TreeNode<Integer> result = insertBst.insert(root, 5);
 
         assertSame(root, result);
@@ -43,7 +43,7 @@ public class InsertBstTest {
     @Test
     public void testInsertRightChild() {
         // Insert a larger value, should go to the right
-        TreeNode<Integer> root = new TreeNode<Integer>(10);
+        TreeNode<Integer> root = new TreeNode<>(10);
         TreeNode<Integer> result = insertBst.insert(root, 15);
 
         assertSame(root, result);
@@ -55,7 +55,7 @@ public class InsertBstTest {
     @Test
     public void testInsertDuplicateValue() {
         // Inserting a duplicate value should not modify the tree
-        TreeNode<Integer> root = new TreeNode<Integer>(10);
+        TreeNode<Integer> root = new TreeNode<>(10);
         TreeNode<Integer> result = insertBst.insert(root, 10);
 
         assertSame(root, result);
@@ -133,9 +133,9 @@ public class InsertBstTest {
         //      5   15          5   15
         //                     /
         //                    3
-        TreeNode<Integer> root = new TreeNode<Integer>(10,
-                new TreeNode<Integer>(5),
-                new TreeNode<Integer>(15));
+        TreeNode<Integer> root = new TreeNode<>(10,
+                new TreeNode<>(5),
+                new TreeNode<>(15));
 
         insertBst.insert(root, 3);
 
@@ -149,9 +149,9 @@ public class InsertBstTest {
         //      5   15          5   15
         //     /               / \
         //    3               3   7
-        TreeNode<Integer> root = new TreeNode<Integer>(10,
-                new TreeNode<Integer>(5, new TreeNode<Integer>(3), null),
-                new TreeNode<Integer>(15));
+        TreeNode<Integer> root = new TreeNode<>(10,
+                new TreeNode<>(5, new TreeNode<>(3), null),
+                new TreeNode<>(15));
 
         insertBst.insert(root, 7);
 

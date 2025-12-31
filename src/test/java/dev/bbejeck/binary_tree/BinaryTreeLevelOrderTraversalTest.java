@@ -24,7 +24,7 @@ class BinaryTreeLevelOrderTraversalTest {
 
     @Test
     void testLevelOrderWithSingleNode() {
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
+        TreeNode<Integer> root = new TreeNode<>(1);
         List<List<Integer>> result = traversal.levelOrder(root);
 
         assertEquals(1, result.size());
@@ -39,13 +39,13 @@ class BinaryTreeLevelOrderTraversalTest {
         //   2   3
         //  / \ / \
         // 4  5 6  7
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
-        root.left = new TreeNode<Integer>(2);
-        root.right = new TreeNode<Integer>(3);
-        root.left.left = new TreeNode<Integer>(4);
-        root.left.right = new TreeNode<Integer>(5);
-        root.right.left = new TreeNode<Integer>(6);
-        root.right.right = new TreeNode<Integer>(7);
+        TreeNode<Integer> root = new TreeNode<>(1);
+        root.left = new TreeNode<>(2);
+        root.right = new TreeNode<>(3);
+        root.left.left = new TreeNode<>(4);
+        root.left.right = new TreeNode<>(5);
+        root.right.left = new TreeNode<>(6);
+        root.right.right = new TreeNode<>(7);
 
         List<List<Integer>> result = traversal.levelOrder(root);
 
@@ -63,9 +63,9 @@ class BinaryTreeLevelOrderTraversalTest {
         //   2
         //  /
         // 3
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
-        root.left = new TreeNode<Integer>(2);
-        root.left.left = new TreeNode<Integer>(3);
+        TreeNode<Integer> root = new TreeNode<>(1);
+        root.left = new TreeNode<>(2);
+        root.left.left = new TreeNode<>(3);
 
         List<List<Integer>> result = traversal.levelOrder(root);
 
@@ -83,9 +83,9 @@ class BinaryTreeLevelOrderTraversalTest {
         //     2
         //      \
         //       3
-        TreeNode<Integer> root = new TreeNode<Integer>(1);
-        root.right = new TreeNode<Integer>(2);
-        root.right.right = new TreeNode<Integer>(3);
+        TreeNode<Integer> root = new TreeNode<>(1);
+        root.right = new TreeNode<>(2);
+        root.right.right = new TreeNode<>(3);
 
         List<List<Integer>> result = traversal.levelOrder(root);
 

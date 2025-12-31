@@ -9,7 +9,7 @@ public class InsertBst {
 
     public TreeNode<Integer> insert(TreeNode<Integer> root, int val) {
         if (root == null) {
-            return new TreeNode<Integer>(val);
+            return new TreeNode<>(val);
         }
         if (val < root.val) {
             root.left = insert(root.left, val);

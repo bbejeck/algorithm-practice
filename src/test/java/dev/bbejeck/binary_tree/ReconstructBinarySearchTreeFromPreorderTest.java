@@ -22,7 +22,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
     @DisplayName("Should return null for empty array")
     void testEmptyArray() {
         int[] preorder = {};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
         assertNull(result);
     }
 
@@ -30,7 +30,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
     @DisplayName("Should build single node tree")
     void testSingleNode() {
         int[] preorder = {5};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(5, result.val);
@@ -45,7 +45,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //  /
         // 3
         int[] preorder = {5, 3};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(5, result.val);
@@ -61,7 +61,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //    \
         //     8
         int[] preorder = {5, 8};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(5, result.val);
@@ -77,7 +77,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //    / \
         //   3   8
         int[] preorder = {5, 3, 8};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(5, result.val);
@@ -94,7 +94,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //    / \    \
         //   1   7   12
         int[] preorder = {8, 5, 1, 7, 10, 12};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(8, result.val);
@@ -121,7 +121,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //  /
         // 1
         int[] preorder = {5, 4, 3, 1};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(5, result.val);
@@ -147,7 +147,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //      \
         //       5
         int[] preorder = {1, 2, 3, 5};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(1, result.val);
@@ -171,7 +171,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //     / \   / \
         //    3   7 12  20
         int[] preorder = {10, 5, 3, 7, 15, 12, 20};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(10, result.val);
@@ -191,7 +191,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
     @DisplayName("Should verify BST property - left < root < right")
     void testBSTProperty() {
         int[] preorder = {8, 5, 1, 7, 10, 12};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertTrue(isValidBST(result, Integer.MIN_VALUE, Integer.MAX_VALUE));
     }
@@ -201,14 +201,14 @@ class ReconstructBinarySearchTreeFromPreorderTest {
     void testMultipleCalls() {
         // First call
         int[] preorder1 = {5, 3, 8};
-        TreeNode result1 = treeBuilder.buildTree(preorder1);
+        TreeNode<Integer> result1 = treeBuilder.buildTree(preorder1);
         assertEquals(5, result1.val);
         assertEquals(3, result1.left.val);
         assertEquals(8, result1.right.val);
 
         // Second call should work independently
         int[] preorder2 = {10, 6, 15};
-        TreeNode result2 = treeBuilder.buildTree(preorder2);
+        TreeNode<Integer> result2 = treeBuilder.buildTree(preorder2);
         assertEquals(10, result2.val);
         assertEquals(6, result2.left.val);
         assertEquals(15, result2.right.val);
@@ -223,7 +223,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //     \
         //      4
         int[] preorder = {6, 2, 4, 8};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(6, result.val);
@@ -244,7 +244,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
         //   /
         //  10
         int[] preorder = {50, 30, 20, 10, 40, 70, 60, 80};
-        TreeNode result = treeBuilder.buildTree(preorder);
+        TreeNode<Integer> result = treeBuilder.buildTree(preorder);
 
         assertNotNull(result);
         assertEquals(50, result.val);
@@ -260,7 +260,7 @@ class ReconstructBinarySearchTreeFromPreorderTest {
     }
 
     // Helper method to verify BST property
-    private boolean isValidBST(TreeNode node, int min, int max) {
+    private boolean isValidBST(TreeNode<Integer> node, int min, int max) {
         if (node == null) {
             return true;
         }

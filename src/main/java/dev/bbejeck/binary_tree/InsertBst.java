@@ -7,9 +7,9 @@ package dev.bbejeck.binary_tree;
  */
 public class InsertBst {
 
-    public TreeNode insert(TreeNode root, int val) {
+    public TreeNode<Integer> insert(TreeNode<Integer> root, int val) {
         if (root == null) {
-            return new TreeNode(val);
+            return new TreeNode<Integer>(val);
         }
         if (val < root.val) {
             root.left = insert(root.left, val);

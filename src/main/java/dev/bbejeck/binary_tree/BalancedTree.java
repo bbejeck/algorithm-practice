@@ -7,11 +7,11 @@ package dev.bbejeck.binary_tree;
  */
 public class BalancedTree {
 
-    public boolean isBalanced(TreeNode root) {
+    public boolean isBalanced(TreeNode<Integer> root) {
         return dfs(root) [0] == 1;
     }
 
-    private int[] dfs(TreeNode node) {
+    private int[] dfs(TreeNode<Integer> node) {
           if (node == null) {
               return new int[] {1, -1};
           }

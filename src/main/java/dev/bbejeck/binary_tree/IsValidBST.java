@@ -7,11 +7,11 @@ package dev.bbejeck.binary_tree;
  */
 public class IsValidBST {
 
-    public boolean valid(TreeNode root) {
+    public boolean valid(TreeNode<Integer> root) {
         return bstHelper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    private boolean bstHelper(TreeNode root, int min, int max) {
+    private boolean bstHelper(TreeNode<Integer> root, int min, int max) {
          if (root == null) {
              return true;
          }

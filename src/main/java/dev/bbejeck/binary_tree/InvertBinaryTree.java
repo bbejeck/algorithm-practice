@@ -7,11 +7,11 @@ package dev.bbejeck.binary_tree;
  */
 public class InvertBinaryTree {
 
-    public TreeNode invertTree(TreeNode node) {
+    public TreeNode<Integer> invertTree(TreeNode<Integer> node) {
         if (node == null) {
             return null;
         }
-        TreeNode tempLeft = node.left;
+        TreeNode<Integer> tempLeft = node.left;
         node.left = node.right;
         node.right = tempLeft;
         invertTree(node.left);

@@ -9,7 +9,7 @@ import java.util.Map;
  * Time: 2:56 PM
  */
 public class ReconstructTreeFromPreorderInorderArrays {
-    public TreeNode constructBinaryTree(int[] preorder, int[] inorder) {
+    public TreeNode<Integer> constructBinaryTree(int[] preorder, int[] inorder) {
        Map<Integer, Integer> indxMap = new HashMap<>();
         for (int i = 0; i < inorder.length; i++) {
             indxMap.put(inorder[i], i);
@@ -17,7 +17,7 @@ public class ReconstructTreeFromPreorderInorderArrays {
         return buildTree(preorder, indxMap, 0, 0, inorder.length);
     }
 
-    public TreeNode buildTree(int[] preorder,
+    public TreeNode<Integer> buildTree(int[] preorder,
                               Map<Integer, Integer> indxMap,
                               int preOrderStart,
                               int inOrderStart,
@@ -29,17 +29,17 @@ public class ReconstructTreeFromPreorderInorderArrays {
         int rootIndx = indxMap.get(rootVal);
         int leftSize = rootIndx - inOrderStart;
 
-        TreeNode left = buildTree(preorder,
+        TreeNode<Integer> left = buildTree(preorder,
                                  indxMap,
                      preOrderStart + 1,
                                  inOrderStart,
                                  leftSize);
-        TreeNode right = buildTree(preorder,
+        TreeNode<Integer> right = buildTree(preorder,
                                    indxMap,
                        preOrderStart + 1 + leftSize,
                         rootIndx + 1,
                               size - 1 - leftSize);
 
-        return new TreeNode(rootVal, left, right);
+        return new TreeNode<Integer>(rootVal, left, right);
     }
 }

@@ -12,19 +12,19 @@ import java.util.Queue;
  */
 public class BinaryTreeLevelOrderTraversal {
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder(TreeNode<Integer> root) {
         List<List<Integer>> results = new ArrayList<>();
         if (root == null) {
             return results;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode<Integer>> queue = new LinkedList<>();
         queue.offer(root);
         while(!queue.isEmpty()) {
             int numLevel = queue.size();
             List<Integer> currentLevel = new ArrayList<>();
             for (int i = 0; i < numLevel; i++) {
-                TreeNode current = queue.poll();
+                TreeNode<Integer> current = queue.poll();
                 currentLevel.add(current.val);
                 if (current.left != null) {
                     queue.offer(current.left);

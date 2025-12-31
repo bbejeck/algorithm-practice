@@ -20,7 +20,7 @@ public class InsertBstTest {
     @Test
     public void testInsertIntoNullTree() {
         // Inserting into an empty tree should create a new root
-        TreeNode result = insertBst.insert(null, 5);
+        TreeNode<Integer> result = insertBst.insert(null, 5);
 
         assertNotNull(result);
         assertEquals(5, result.val);
@@ -31,8 +31,8 @@ public class InsertBstTest {
     @Test
     public void testInsertLeftChild() {
         // Insert a smaller value, should go to the left
-        TreeNode root = new TreeNode(10);
-        TreeNode result = insertBst.insert(root, 5);
+        TreeNode<Integer> root = new TreeNode<Integer>(10);
+        TreeNode<Integer> result = insertBst.insert(root, 5);
 
         assertSame(root, result);
         assertNotNull(result.left);
@@ -43,8 +43,8 @@ public class InsertBstTest {
     @Test
     public void testInsertRightChild() {
         // Insert a larger value, should go to the right
-        TreeNode root = new TreeNode(10);
-        TreeNode result = insertBst.insert(root, 15);
+        TreeNode<Integer> root = new TreeNode<Integer>(10);
+        TreeNode<Integer> result = insertBst.insert(root, 15);
 
         assertSame(root, result);
         assertNotNull(result.right);
@@ -55,8 +55,8 @@ public class InsertBstTest {
     @Test
     public void testInsertDuplicateValue() {
         // Inserting a duplicate value should not modify the tree
-        TreeNode root = new TreeNode(10);
-        TreeNode result = insertBst.insert(root, 10);
+        TreeNode<Integer> root = new TreeNode<Integer>(10);
+        TreeNode<Integer> result = insertBst.insert(root, 10);
 
         assertSame(root, result);
         assertNull(result.left);
@@ -71,7 +71,7 @@ public class InsertBstTest {
         //      5   15
         //     /     \
         //    3      20
-        TreeNode root = insertBst.insert(null, 10);
+        TreeNode<Integer> root = insertBst.insert(null, 10);
         insertBst.insert(root, 5);
         insertBst.insert(root, 15);
         insertBst.insert(root, 3);
@@ -87,7 +87,7 @@ public class InsertBstTest {
     @Test
     public void testInsertMaintainsBstProperty() {
         // Insert values and verify BST property is maintained
-        TreeNode root = insertBst.insert(null, 50);
+        TreeNode<Integer> root = insertBst.insert(null, 50);
         insertBst.insert(root, 30);
         insertBst.insert(root, 70);
         insertBst.insert(root, 20);
@@ -101,7 +101,7 @@ public class InsertBstTest {
     @Test
     public void testInsertDeepLeftChain() {
         // Insert descending values, creating a left-skewed tree
-        TreeNode root = insertBst.insert(null, 50);
+        TreeNode<Integer> root = insertBst.insert(null, 50);
         insertBst.insert(root, 40);
         insertBst.insert(root, 30);
         insertBst.insert(root, 20);
@@ -115,7 +115,7 @@ public class InsertBstTest {
     @Test
     public void testInsertDeepRightChain() {
         // Insert ascending values, creating a right-skewed tree
-        TreeNode root = insertBst.insert(null, 10);
+        TreeNode<Integer> root = insertBst.insert(null, 10);
         insertBst.insert(root, 20);
         insertBst.insert(root, 30);
         insertBst.insert(root, 40);
@@ -133,9 +133,9 @@ public class InsertBstTest {
         //      5   15          5   15
         //                     /
         //                    3
-        TreeNode root = new TreeNode(10,
-                new TreeNode(5),
-                new TreeNode(15));
+        TreeNode<Integer> root = new TreeNode<Integer>(10,
+                new TreeNode<Integer>(5),
+                new TreeNode<Integer>(15));
 
         insertBst.insert(root, 3);
 
@@ -149,9 +149,9 @@ public class InsertBstTest {
         //      5   15          5   15
         //     /               / \
         //    3               3   7
-        TreeNode root = new TreeNode(10,
-                new TreeNode(5, new TreeNode(3), null),
-                new TreeNode(15));
+        TreeNode<Integer> root = new TreeNode<Integer>(10,
+                new TreeNode<Integer>(5, new TreeNode<Integer>(3), null),
+                new TreeNode<Integer>(15));
 
         insertBst.insert(root, 7);
 
@@ -159,7 +159,7 @@ public class InsertBstTest {
     }
 
     // Helper method to verify BST property
-    private boolean isValidBST(TreeNode node, int min, int max) {
+    private boolean isValidBST(TreeNode<Integer> node, int min, int max) {
         if (node == null) {
             return true;
         }

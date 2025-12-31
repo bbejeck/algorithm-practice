@@ -7,11 +7,11 @@ package dev.bbejeck.binary_tree;
  */
 public class VisibleNodes {
 
-    public int visibleNodes(TreeNode root) {
+    public int visibleNodes(TreeNode<Integer> root) {
           return dfs(root, Integer.MIN_VALUE);
     }
 
-    private int dfs(TreeNode node, int maxSoFar) {
+    private int dfs(TreeNode<Integer> node, int maxSoFar) {
          if (node == null) {
              return 0;
          }

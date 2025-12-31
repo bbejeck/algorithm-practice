@@ -13,18 +13,18 @@ import java.util.Queue;
  */
 public class BinaryTreeRightSideView {
 
-    public List<Integer> rightSideView(TreeNode root) {
+    public List<Integer> rightSideView(TreeNode<Integer> root) {
         if (root == null) {
             return Collections.emptyList();
         }
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode<Integer>> queue = new LinkedList<>();
 
         List<Integer> results = new ArrayList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             int level = queue.size();
             for (int i = 0; i < level; i++) {
-                TreeNode current = queue.poll();
+                TreeNode<Integer> current = queue.poll();
                    if (i == level - 1) {
                       results.add(current.val);
                    }

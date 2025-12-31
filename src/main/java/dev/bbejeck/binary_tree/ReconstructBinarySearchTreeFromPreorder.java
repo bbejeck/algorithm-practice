@@ -7,14 +7,14 @@ package dev.bbejeck.binary_tree;
  */
 public class ReconstructBinarySearchTreeFromPreorder {
 
-    public TreeNode buildTree(int[] preorder) {
+    public TreeNode<Integer> buildTree(int[] preorder) {
         return buildTreeHelper(preorder,
                                Integer.MIN_VALUE,
                                Integer.MAX_VALUE,
                                new int[]{0});
     }
 
-    public TreeNode buildTreeHelper(int[] preorder,
+    public TreeNode<Integer> buildTreeHelper(int[] preorder,
                                     int min,
                                     int max,
                                     int[] index) {
@@ -26,8 +26,8 @@ public class ReconstructBinarySearchTreeFromPreorder {
                 return null;
             }
             index[0]++;
-            TreeNode left = buildTreeHelper(preorder, min, val, index);
-            TreeNode right = buildTreeHelper(preorder, val, max, index);
-            return new TreeNode(val, left, right);
+            TreeNode<Integer> left = buildTreeHelper(preorder, min, val, index);
+            TreeNode<Integer> right = buildTreeHelper(preorder, val, max, index);
+            return new TreeNode<Integer>(val, left, right);
         }
 }

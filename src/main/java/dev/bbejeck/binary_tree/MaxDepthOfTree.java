@@ -7,11 +7,11 @@ package dev.bbejeck.binary_tree;
  * Time: 1:44 PM
  */
 public class MaxDepthOfTree {
-    public int maxDepth(TreeNode root) {
+    public int maxDepth(TreeNode<Integer> root) {
         return recursiveCount(root, 0);
     }
 
-    int recursiveCount(TreeNode root, int depth) {
+    int recursiveCount(TreeNode<Integer> root, int depth) {
         if (root == null) {
             return depth;
         }

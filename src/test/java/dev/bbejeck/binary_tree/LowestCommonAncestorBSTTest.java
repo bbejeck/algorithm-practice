@@ -27,7 +27,7 @@ class LowestCommonAncestorBSTTest {
         //        6
         //       / \
         //      2   8
-        TreeNode root = buildTree(6, 2, 8);
+        TreeNode<Integer> root = buildTree(6, 2, 8);
 
         Assertions.assertNotNull(root);
         assertEquals(6, lcaBST.lowestCommonAncestor(root, 2, 8));
@@ -41,7 +41,7 @@ class LowestCommonAncestorBSTTest {
         //      2   8
         //     / \
         //    0   4
-        TreeNode root = buildTree(6, 2, 8, 0, 4);
+        TreeNode<Integer> root = buildTree(6, 2, 8, 0, 4);
 
         Assertions.assertNotNull(root);
         assertEquals(2, lcaBST.lowestCommonAncestor(root, 0, 4));
@@ -55,7 +55,7 @@ class LowestCommonAncestorBSTTest {
         //      2   8
         //         / \
         //        7   9
-        TreeNode root = buildTree(6, 2, 8, 7, 9);
+        TreeNode<Integer> root = buildTree(6, 2, 8, 7, 9);
 
         assertEquals(8, lcaBST.lowestCommonAncestor(root, 7, 9));
     }
@@ -70,7 +70,7 @@ class LowestCommonAncestorBSTTest {
         //    0   4
         //       / \
         //      3   5
-        TreeNode root = buildTree(6, 2, 8, 0, 4, 3, 5);
+        TreeNode<Integer> root = buildTree(6, 2, 8, 0, 4, 3, 5);
 
         assertEquals(2, lcaBST.lowestCommonAncestor(root, 2, 4));
     }
@@ -81,7 +81,7 @@ class LowestCommonAncestorBSTTest {
         //        6
         //       / \
         //      2   8
-        TreeNode root = buildTree(6, 2, 8);
+        TreeNode<Integer> root = buildTree(6, 2, 8);
 
         assertEquals(6, lcaBST.lowestCommonAncestor(root, 6, 8));
         assertEquals(6, lcaBST.lowestCommonAncestor(root, 6, 2));
@@ -97,7 +97,7 @@ class LowestCommonAncestorBSTTest {
         //      0   4 7   9
         //         / \
         //        3   5
-        TreeNode root = buildTree(6, 2, 8, 0, 4, 7, 9, 3, 5);
+        TreeNode<Integer> root = buildTree(6, 2, 8, 0, 4, 7, 9, 3, 5);
 
         assertEquals(6, lcaBST.lowestCommonAncestor(root, 2, 8));
         assertEquals(2, lcaBST.lowestCommonAncestor(root, 2, 4));
@@ -115,7 +115,7 @@ class LowestCommonAncestorBSTTest {
         //      0   4 7   9
         //         / \
         //        3   5
-        TreeNode root = buildTree(6, 2, 8, 0, 4, 7, 9, 3, 5);
+        TreeNode<Integer> root = buildTree(6, 2, 8, 0, 4, 7, 9, 3, 5);
 
         // 0 is at depth 2, 5 is at depth 3
         assertEquals(2, lcaBST.lowestCommonAncestor(root, 0, 5));
@@ -131,7 +131,7 @@ class LowestCommonAncestorBSTTest {
         //  4
         // /
         // 3
-        TreeNode root = buildTree(5, 4, 3);
+        TreeNode<Integer> root = buildTree(5, 4, 3);
 
         assertEquals(4, lcaBST.lowestCommonAncestor(root, 3, 4));
         assertEquals(5, lcaBST.lowestCommonAncestor(root, 3, 5));
@@ -145,7 +145,7 @@ class LowestCommonAncestorBSTTest {
         //   6
         //    \
         //     7
-        TreeNode root = buildTree(5, 6, 7);
+        TreeNode<Integer> root = buildTree(5, 6, 7);
 
         assertEquals(6, lcaBST.lowestCommonAncestor(root, 6, 7));
         assertEquals(5, lcaBST.lowestCommonAncestor(root, 5, 7));
@@ -159,7 +159,7 @@ class LowestCommonAncestorBSTTest {
         //      2   8
         //     / \
         //    0   4
-        TreeNode root = buildTree(6, 2, 8, 0, 4);
+        TreeNode<Integer> root = buildTree(6, 2, 8, 0, 4);
 
         assertEquals(lcaBST.lowestCommonAncestor(root, 0, 4),
                 lcaBST.lowestCommonAncestor(root, 4, 0));
@@ -173,18 +173,18 @@ class LowestCommonAncestorBSTTest {
         //        6
         //       / \
         //      2   8
-        TreeNode root = buildTree(6, 2, 8);
+        TreeNode<Integer> root = buildTree(6, 2, 8);
 
         assertEquals(6, lcaBST.lowestCommonAncestor(root, 6, 6));
         assertEquals(2, lcaBST.lowestCommonAncestor(root, 2, 2));
     }
 
     // Helper method to build a BST from values
-    private TreeNode buildTree(int... values) {
+    private TreeNode<Integer> buildTree(int... values) {
         if (values.length == 0) {
             return null;
         }
-        TreeNode root = insertBst.insert(null, values[0]);
+        TreeNode<Integer> root = insertBst.insert(null, values[0]);
         for (int i = 1; i < values.length; i++) {
             insertBst.insert(root, values[i]);
         }

@@ -7,7 +7,7 @@ package dev.bbejeck.binary_tree;
  */
 public class LowestCommonAncestorBST {
 
-      int lowestCommonAncestor(TreeNode root, int p, int q) {
+      int lowestCommonAncestor(TreeNode<Integer> root, int p, int q) {
           if (p < root.val && q < root.val) {
               return lowestCommonAncestor(root.left, p, q);
           } else if (p > root.val && q > root.val) {

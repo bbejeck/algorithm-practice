@@ -12,20 +12,20 @@ import java.util.Stack;
  * Time: 8:44 PM
  */
 public class BinaryTreeLevelOrderTraversalII {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+    public List<List<Integer>> levelOrderBottom(TreeNode<Integer> root) {
         List<List<Integer>> results = new ArrayList<>();
         Stack<List<Integer>> stack = new Stack<>();
         if (root == null) {
             return results;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode<Integer>> queue = new LinkedList<>();
         queue.offer(root);
         while(!queue.isEmpty()) {
             int numLevel = queue.size();
             List<Integer> currentLevel = new ArrayList<>();
             for (int i = 0; i < numLevel; i++) {
-                TreeNode current = queue.poll();
+                TreeNode<Integer> current = queue.poll();
                 currentLevel.add(current.val);
                 if (current.left != null) {
                     queue.offer(current.left);

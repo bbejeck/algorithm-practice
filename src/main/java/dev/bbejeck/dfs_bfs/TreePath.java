@@ -21,15 +21,15 @@ public class TreePath {
 
     public void dfs(TreeNode<Integer> root, List<String> path, List<String> result) {
         if (root.children().isEmpty()) {
-            List<String> copy = new ArrayList<>(path);
-            copy.add(Integer.toString(root.val));
-            result.add(String.join("->", copy));
+            path.add(Integer.toString(root.val));
+            result.add(String.join("->", path));
+            path.removeLast();
             return;
         }
         for (TreeNode<Integer> child : root.children()) {
-            List<String> currentCopy = new ArrayList<>(path);
-            currentCopy.add(Integer.toString(root.val));
-            dfs(child, currentCopy, result);
+            path.add(Integer.toString(root.val));
+            dfs(child, path, result);
+            path.removeLast();
         }
     }
 }

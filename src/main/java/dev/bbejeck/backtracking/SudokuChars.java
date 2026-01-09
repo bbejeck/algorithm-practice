@@ -64,16 +64,27 @@ public class SudokuChars {
     }
 
     public boolean isValidSudoku(char[][] board) {
-        for (int i = 0; i < board.length; i++) {
-            Set<Character> rowNums = new HashSet<>();
-            Set<Character> colNums = new HashSet<>();
+        Set<Character>[] rows = new HashSet[9];
+        Set<Character>[] cols = new HashSet[9];
+        Set<Character>[] boxes = new HashSet[9];
 
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] != '.' && !rowNums.add(board[i][j])) {
-                    return false;
-                }
-                if (board[j][i] != '.' && !colNums.add(board[j][i])) {
-                    return false;
+        for (int i = 0; i < 9; i++) {
+            rows[i] = new HashSet<>();
+            cols[i] = new HashSet<>();
+            boxes[i] = new HashSet<>();
+        }
+
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                char c = board[row][col];
+                if (c != '.') {
+                    int boxIndex = (row / 3) * 3 + col / 3;
+
+                    if (!rows[row].add(c) ||
+                            !cols[col].add(c) ||
+                            !boxes[boxIndex].add(c)) {
+                        return false;
+                    }
                 }
             }
         }

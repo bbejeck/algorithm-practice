@@ -11,7 +11,7 @@ import java.util.Set;
  * Date: 1/18/25
  * Time: 3:12 PM
  */
-public class    Soduku {
+public class Sudoku {
 
     public int[][] solveSudoku(int[][] board) {
         backtrack(board, 0, 0);
@@ -64,26 +64,32 @@ public class    Soduku {
 
 
     public boolean isValidSudoku(int[][] board) {
-        List<Set<Character>> rowList = new ArrayList<>(9);
-        List<Set<Character>> colList = new ArrayList<>(9);
-        List<Set<Character>> boxList = new ArrayList<>(9);
-
+        List<Set<Integer>> rowList = new ArrayList<>(9);
+        List<Set<Integer>> colList = new ArrayList<>(9);
+        List<Set<Integer>> boxList = new ArrayList<>(9);
+        for (int i = 0; i < 9; i++) {
+            rowList.add(new HashSet<>());
+            colList.add(new HashSet<>());
+            boxList.add(new HashSet<>());
+        }
         for (int row = 0; row < 9; row++) {
             for(int col = 0; col < 9; col++) {
-
                 if(board[row][col] != 0) {
                     int boxIndex = (row / 3) * 3 + col / 3;
+                    int candidate = board[row][col];
+                    if (!rowList.get(row).add(candidate) || !colList.get(col).add(candidate) || !boxList.get(boxIndex).add(candidate)) {
+                        return false;
+                    }
                 }
             }
         }
-
 
         return true;
     }
 
 
     public static void main(String[] args) {
-        Soduku soduku = new Soduku();
+        Sudoku sudoku = new Sudoku();
         //runTests(soduku);
         int[][] boardToSolve = {
                 {5, 3, 0, 0, 7, 0, 0, 0, 0},
@@ -96,8 +102,8 @@ public class    Soduku {
                 {0, 0, 0, 4, 1, 9, 0, 0, 5},
                 {0, 0, 0, 0, 8, 0, 0, 7, 9}
         };
-        int[][] solved = soduku.solveSudoku(boardToSolve);
-        boolean valid = soduku.isValidSudoku(solved);
+        int[][] solved = sudoku.solveSudoku(boardToSolve);
+        boolean valid = sudoku.isValidSudoku(solved);
         if (valid) {
             System.out.printf("Solved the Sudoku!!!%n");
             for (int[] row : solved) {
@@ -109,7 +115,7 @@ public class    Soduku {
 
     }
 
-    private static void runTests(Soduku soduku) {
+    private static void runTests(Sudoku sudoku) {
         int[][] validBoard1 = {
                 {5, 3, 0, 0, 7, 0, 0, 0, 0},
                 {6, 0, 0, 1, 9, 5, 0, 0, 0},
@@ -158,18 +164,18 @@ public class    Soduku {
                 {0, 0, 0, 0, 8, 0, 0, 7, 9}
         };
 
-        System.out.println("Should be valid (true) => " + soduku.isValidSudoku(validBoard1));
-        System.out.println("Should be valid (true) => " + soduku.isValidSudoku(validBoard2));
-        System.out.println("Should be invalid (false) => " + soduku.isValidSudoku(invalidBoard1));
-        System.out.println("Should be invalid (false) => " + soduku.isValidSudoku(invalidBoard2));
+        System.out.println("Should be valid (true) => " + sudoku.isValidSudoku(validBoard1));
+        System.out.println("Should be valid (true) => " + sudoku.isValidSudoku(validBoard2));
+        System.out.println("Should be invalid (false) => " + sudoku.isValidSudoku(invalidBoard1));
+        System.out.println("Should be invalid (false) => " + sudoku.isValidSudoku(invalidBoard2));
         System.out.println("======================");
 
-        System.out.println("Should be able to place 5 in [3][5] => " + soduku.canPlace(validBoard1, 3, 3, 5)); // true
-        System.out.println("Should not be able to place 6 in [5][8] => " + soduku.canPlace(invalidBoard2, 5, 8, 6));  // false
-        System.out.println("Should not be able to place 6 in [5][4] => " + soduku.canPlace(validBoard1, 5, 4, 6)); // false
-        System.out.println("Should not be able to place 9 in [3][1] => " + soduku.canPlace(validBoard1, 3, 1, 9)); // false
-        System.out.println("Should be able to place 2 in [7][3] => " + soduku.canPlace(validBoard1, 7, 3, 2)); // true
-        System.out.println("Should not be able to place 1 in [1][4] => " + soduku.canPlace(validBoard1, 1, 4, 1)); // false
+        System.out.println("Should be able to place 5 in [3][5] => " + sudoku.canPlace(validBoard1, 3, 3, 5)); // true
+        System.out.println("Should not be able to place 6 in [5][8] => " + sudoku.canPlace(invalidBoard2, 5, 8, 6));  // false
+        System.out.println("Should not be able to place 6 in [5][4] => " + sudoku.canPlace(validBoard1, 5, 4, 6)); // false
+        System.out.println("Should not be able to place 9 in [3][1] => " + sudoku.canPlace(validBoard1, 3, 1, 9)); // false
+        System.out.println("Should be able to place 2 in [7][3] => " + sudoku.canPlace(validBoard1, 7, 3, 2)); // true
+        System.out.println("Should not be able to place 1 in [1][4] => " + sudoku.canPlace(validBoard1, 1, 4, 1)); // false
     }
 }
 

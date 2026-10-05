@@ -68,7 +68,7 @@ public class BufferedFile {
     private final File file;
     private final int maxBytes;
     private final byte[] buffer;
-    private int count;
+    private int destPos;
 
     public BufferedFile(File file, int maxBytes) {
         this.file = file;
@@ -79,22 +79,22 @@ public class BufferedFile {
     public void write(byte[] data) {
         int srcPos = 0;
         while (srcPos < data.length) {
-            int space = maxBytes - count;
+            int space = maxBytes - destPos;
             int remaining = data.length - srcPos;
             int n = Math.min(space, remaining);
-            System.arraycopy(data, srcPos, buffer, count, n);
+            System.arraycopy(data, srcPos, buffer, destPos, n);
             srcPos += n;
-            count += n;
-            if (count == maxBytes) {
+            destPos += n;
+            if (destPos == maxBytes) {
                 flush();
             }
         }
     }
 
     public void flush() {
-        if (count > 0) {
-            file.write(Arrays.copyOf(buffer, count));
-            count = 0;
+        if (destPos > 0) {
+            file.write(Arrays.copyOf(buffer, destPos));
+            destPos = 0;
         }
     }
 

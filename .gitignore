@@ -41,3 +41,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/PRACTICE_ADVICE.md
+/PRACTICE_LOG.md
